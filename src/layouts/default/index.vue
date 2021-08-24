@@ -4,16 +4,17 @@
  * @Author: kevinzheng
  * @Date: 2021-08-19 16:27:28
  * @LastEditors: kevinzheng
- * @LastEditTime: 2021-08-19 17:11:36
+ * @LastEditTime: 2021-08-19 18:14:14
 -->
 <template>
   <div class="layout-defalut">
     <div class="layout-defalut__nav">
-      <div class="layout-nav__logo">
-          <img src="/image/icon/logo.png">
-      </div>
+      <a href="/" class="layout-nav__logo">
+          <img src="/image/icon/logo.png" class="logoIcon"/>
+          <i class="logoName">coconut design</i>
+      </a>
       <div class="layout-nav__select"></div>
-      <div class="layout-nav__inputSelect"></div>
+      <div class="layout-nav__inputSearch"></div>
     </div>
     <aside class="layout-defalut__aside">
     </aside>
@@ -52,4 +53,5 @@ export default {
 </script>
 <style lang='scss' scoped>
 //@import url(); 引入公共css类
+@import "./style/index.scss";
 </style>
