@@ -1,0 +1,62 @@
+@import "./config.scss";
+/*    BEM    */
+// block
+@mixin b($block) {
+    $B: $namespace + "-" + $block !global;
+    .#{$B} {
+        @content;
+    }
+}
+// element
+@mixin e($element) {
+    $E: $element !global;
+    $selector: &;
+    $currentSelector: "";
+    @each $unit in $element {
+        $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+    }
+
+    @if hitAllSpecialNestRule($selector) {
+        @at-root {
+            #{$selector} {
+                #{$currentSelector} {
+                    @content;
+                }
+            }
+        }
+    } @else {
+        @at-root {
+            #{$currentSelector} {
+                @content;
+            }
+        }
+    }
+}
+// modifier
+@mixin m($modifier) {
+    $selector: &;
+    $currentSelector: "";
+    @each $unit in $modifier {
+        $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+    }
+
+    @at-root {
+        #{$currentSelector} {
+            @content;
+        }
+    }
+}
+// 挂载组件状态
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix + $state} {
+            @content;
+        }
+    }
+}
+// 组件挂载伪类
+@mixin pseudo($pseudo) {
+    @at-root #{&}#{":#{$pseudo}"} {
+        @content;
+    }
+}

@@ -1,0 +1,27 @@
+/**
+ * 颜色变量
+ */
+$white :#fff;
+$defalut-white:#FBFBFD;
+$black:#000;
+$defalut-black:#1D1D1F;
+
+$primary:#7575ff;
+
+
+
+//背景颜色设置
+.coo-bg-default{
+    background-color: $defalut-write;
+}
+.coo-bg-primary{
+    background-color: $primary;
+}
+
+//字体颜色设置
+.coo-font-default{
+    color:$defalut-black
+}
+.coo-font-primary{
+    color: $primary;
+}
