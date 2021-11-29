@@ -4,7 +4,7 @@
  * @Author: kevinzheng
  * @Date: 2021-08-24 10:07:14
  * @LastEditors: kevinzheng
- * @LastEditTime: 2021-08-24 10:14:23
+ * @LastEditTime: 2021-11-29 16:42:04
 -->
 <template>
   <button
@@ -13,7 +13,8 @@
     :disabled="buttonDisabled || loading"
     :type="nativeType"
     :class="[
-      type ? 'Coo-button--' + type : '',
+      type ? 'coo-button--' + type : '',
+      buttonSize ? 'coo-button--' + buttonSize : '',
       {
         'is-disabled': buttonDisabled,
         'is-loading': loading,
@@ -23,9 +24,9 @@
       },
     ]"
   >
-    <i class="el-icon-loading" v-if="loading"></i>
-    <i :class="icon" v-if="icon && !loading"></i>
-    <span v-if="$slots.default"><slot></slot></span>
+    <!-- <i class="el-icon-loading" v-if="loading"></i>
+    <i :class="icon" v-if="icon && !loading"></i> -->
+    <span v-if="$slots.default" class="coo-button--text"><slot></slot></span>
   </button>
 </template>
 
@@ -56,12 +57,18 @@ export default {
   //监听属性 类似于data概念
   computed: {
     buttonDisabled() {
-      return this.disabled || (this.elForm || {}).disabled;
+      return this.disabled;
+    },
+    buttonSize() {
+      return this.size;
     },
   },
   //方法集合
   methods: {
     handleClick(evt) {
+      if (this.disabled) {
+        return;
+      }
       this.$emit("click", evt);
     },
   },

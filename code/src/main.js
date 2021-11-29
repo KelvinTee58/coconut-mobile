@@ -4,13 +4,15 @@
  * @Author: kevinzheng
  * @Date: 2021-08-19 11:38:17
  * @LastEditors: kevinzheng
- * @LastEditTime: 2021-08-19 16:53:55
+ * @LastEditTime: 2021-11-29 10:00:41
  */
 import Vue from 'vue'
 import App from './App.vue'
 
 import router from './router/index'
 import VueRouter from 'vue-router'
+import './cocoInstall'
+
 
 window.$router = router
 

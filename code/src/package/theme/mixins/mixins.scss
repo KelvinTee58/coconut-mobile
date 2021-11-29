@@ -1,13 +1,13 @@
 @import "./config.scss";
 /*    BEM    */
-// block
+// block 块
 @mixin b($block) {
     $B: $namespace + "-" + $block !global;
     .#{$B} {
         @content;
     }
 }
-// element
+// element 元素
 @mixin e($element) {
     $E: $element !global;
     $selector: &;
@@ -32,7 +32,7 @@
         }
     }
 }
-// modifier
+// modifier 修饰
 @mixin m($modifier) {
     $selector: &;
     $currentSelector: "";

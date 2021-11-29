@@ -4,9 +4,9 @@
  * @Author: kevinzheng
  * @Date: 2021-08-24 10:06:41
  * @LastEditors: kevinzheng
- * @LastEditTime: 2021-08-24 10:07:28
+ * @LastEditTime: 2021-10-08 16:30:02
  */
-import Button from './src/main';
+import Button from './src/button';
 
 /* istanbul ignore next */
 Button.install = function(Vue) {
