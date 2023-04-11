@@ -1,0 +1,53 @@
+@import "../mixins/mixins";
+@import "../base/var";
+
+@include b(overlay) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $--overlay-default-zindex;
+  width: 100%;
+  height: 100%;
+  @include e(slot) {
+    position: absolute;
+    // transform: translate(-50%, -50%);
+    z-index: $--overlay-default-zindex + 1;
+  }
+  @include when(mark) {
+    background-color: $--overlay-default-background-color;
+  }
+  @include when(top) {
+    @include e(slot) {
+      // transform: translate(-50%, 0px);
+      top: $--overlay-position-top-distance;
+    }
+  }
+  @include when(middle) {
+    @include e(slot) {
+      transform: translateY(-50%);
+      top: $--overlay-position-middle-distance;
+    }
+  }
+  @include when(bottom) {
+    @include e(slot) {
+      // transform: translate(-50%, 0px);
+      bottom: $--overlay-position-bottom-distance;
+    }
+  }
+  @include when(left) {
+    @include e(slot) {
+      left: $--overlay-position-left-distance;
+    }
+  }
+  @include when(center) {
+    @include e(slot) {
+      transform: translateX(-50%);
+      left: $--overlay-position-center-distance;
+    }
+  }
+  @include when(right) {
+    @include e(slot) {
+      right: $--overlay-position-right-distance;
+    }
+  }
+}
