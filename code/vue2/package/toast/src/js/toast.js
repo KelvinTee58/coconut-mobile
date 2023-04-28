@@ -1,5 +1,5 @@
 import vue from 'vue'
-import toastComponent from '../main.vue'
+import toastComponent from '../mainExtendPages.vue'
 
 /**
  * 手动关闭toast
