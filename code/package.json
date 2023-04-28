@@ -1,6 +1,6 @@
 {
   "name": "coconut-mobile",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "mobile UI for vue2 and vue3",
   "main": "vue2/index.js",
   "scripts": {
